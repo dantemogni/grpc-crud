@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package libraryPackage;
+
+service Book {
+    rpc CreateBook(BookRequest) returns (BookItem) {}
+    rpc ListBooks(void) returns (stream BookItems) {}
+}
+
+message void{}
+
+message BookItem {
+    int32 id = 1;
+    string name = 2;
+    string genre = 3;
+    int32 pages = 4;
+    string author = 5;
+    string isbn = 6;
+}
+
+message BookRequest{
+    string name = 1;
+    string genre = 2;
+    int32 pages = 3;
+    string author = 4;
+    string isbn = 5;
+}
+
+message BookItems {
+    repeated BookItem bookItems = 1;
+}
