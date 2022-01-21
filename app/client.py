@@ -1,3 +1,4 @@
+import logging
 import grpc
 import book_pb2, book_pb2_grpc
 
@@ -12,4 +13,5 @@ def run():
     print(book)
 
 if __name__ == '__main__':
+    logging.basicConfig()
     run()
