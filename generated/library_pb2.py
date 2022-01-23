@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rlibrary.proto\x12\x07library\"\x06\n\x04void\"\x83\x01\n\x08\x42ookItem\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12!\n\x05genre\x18\x03 \x01(\x0e\x32\x12.library.BookGenre\x12\r\n\x05pages\x18\x04 \x01(\x05\x12\x0e\n\x06\x61uthor\x18\x05 \x01(\t\x12\x0c\n\x04year\x18\x06 \x01(\x05\x12\x0c\n\x04isbn\x18\x07 \x01(\t\"f\n\x0b\x42ookRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05genre\x18\x02 \x01(\t\x12\r\n\x05pages\x18\x03 \x01(\x05\x12\x0e\n\x06\x61uthor\x18\x04 \x01(\t\x12\x0c\n\x04year\x18\x05 \x01(\x05\x12\x0c\n\x04isbn\x18\x06 \x01(\t\"A\n\x0f\x45\x64itBookRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\"\n\x04\x62ook\x18\x02 \x01(\x0b\x32\x14.library.BookRequest\"1\n\tBookItems\x12$\n\tbookItems\x18\x01 \x01(\x0b\x32\x11.library.BookItem\"\x10\n\x02Id\x12\n\n\x02id\x18\x01 \x01(\x05*\xef\x01\n\tBookGenre\x12\x08\n\x04NONE\x10\x00\x12\r\n\tADVENTURE\x10\x01\x12\n\n\x06\x41\x43TION\x10\x02\x12\x0c\n\x08\x43LASSICS\x10\x03\x12\x0b\n\x07MYSTERY\x10\x04\x12\x0b\n\x07ROMANCE\x10\x05\x12\x0e\n\nBIOGRAPHIC\x10\x06\x12\x0b\n\x07HISTORY\x10\x07\x12\n\n\x06\x45SSAYS\x10\x08\x12\n\n\x06POETRY\x10\t\x12\r\n\tSELF_HELP\x10\n\x12\n\n\x06\x43OMEDY\x10\x0b\x12\t\n\x05\x44RAMA\x10\x0c\x12\n\n\x06HORROR\x10\r\x12\n\n\x06SCI_FI\x10\x0e\x12\x0c\n\x08THRILLER\x10\x0f\x12\x07\n\x03WAR\x10\x10\x12\x0b\n\x07WESTERN\x10\x11\x32\x90\x02\n\x0eLibraryService\x12\x34\n\x07\x41\x64\x64\x42ook\x12\x14.library.BookRequest\x1a\x11.library.BookItem\"\x00\x12\x39\n\x08\x45\x64itBook\x12\x18.library.EditBookRequest\x1a\x11.library.BookItem\"\x00\x12*\n\nDeleteBook\x12\x0b.library.Id\x1a\r.library.void\"\x00\x12/\n\x0bGetBookById\x12\x0b.library.Id\x1a\x11.library.BookItem\"\x00\x12\x30\n\x08GetBooks\x12\r.library.void\x1a\x11.library.BookItem\"\x00\x30\x01\x62\x06proto3'
+  serialized_pb=b'\n\rlibrary.proto\x12\x07library\"\x06\n\x04void\"\x83\x01\n\x08\x42ookItem\x12\n\n\x02id\x18\x01 \x01(\x05\x12\r\n\x05title\x18\x02 \x01(\t\x12!\n\x05genre\x18\x03 \x01(\x0e\x32\x12.library.BookGenre\x12\r\n\x05pages\x18\x04 \x01(\x05\x12\x0e\n\x06\x61uthor\x18\x05 \x01(\t\x12\x0c\n\x04year\x18\x06 \x01(\x05\x12\x0c\n\x04isbn\x18\x07 \x01(\t\"f\n\x0b\x42ookRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05genre\x18\x02 \x01(\t\x12\r\n\x05pages\x18\x03 \x01(\x05\x12\x0e\n\x06\x61uthor\x18\x04 \x01(\t\x12\x0c\n\x04year\x18\x05 \x01(\x05\x12\x0c\n\x04isbn\x18\x06 \x01(\t\"A\n\x0f\x45\x64itBookRequest\x12\n\n\x02id\x18\x01 \x01(\x05\x12\"\n\x04\x62ook\x18\x02 \x01(\x0b\x32\x14.library.BookRequest\"1\n\tBookItems\x12$\n\tbookItems\x18\x01 \x01(\x0b\x32\x11.library.BookItem\"\x10\n\x02Id\x12\n\n\x02id\x18\x01 \x01(\x05*\xef\x01\n\tBookGenre\x12\x08\n\x04NONE\x10\x00\x12\r\n\tADVENTURE\x10\x01\x12\n\n\x06\x41\x43TION\x10\x02\x12\x0c\n\x08\x43LASSICS\x10\x03\x12\x0b\n\x07MYSTERY\x10\x04\x12\x0b\n\x07ROMANCE\x10\x05\x12\x0e\n\nBIOGRAPHIC\x10\x06\x12\x0b\n\x07HISTORY\x10\x07\x12\n\n\x06\x45SSAYS\x10\x08\x12\n\n\x06POETRY\x10\t\x12\r\n\tSELF_HELP\x10\n\x12\n\n\x06\x43OMEDY\x10\x0b\x12\t\n\x05\x44RAMA\x10\x0c\x12\n\n\x06HORROR\x10\r\x12\n\n\x06SCI_FI\x10\x0e\x12\x0c\n\x08THRILLER\x10\x0f\x12\x07\n\x03WAR\x10\x10\x12\x0b\n\x07WESTERN\x10\x11\x32\x89\x02\n\x07Library\x12\x34\n\x07\x41\x64\x64\x42ook\x12\x14.library.BookRequest\x1a\x11.library.BookItem\"\x00\x12\x39\n\x08\x45\x64itBook\x12\x18.library.EditBookRequest\x1a\x11.library.BookItem\"\x00\x12*\n\nDeleteBook\x12\x0b.library.Id\x1a\r.library.void\"\x00\x12/\n\x0bGetBookById\x12\x0b.library.Id\x1a\x11.library.BookItem\"\x00\x12\x30\n\x08GetBooks\x12\r.library.void\x1a\x11.library.BookItem\"\x00\x30\x01\x62\x06proto3'
 )
 
 _BOOKGENRE = _descriptor.EnumDescriptor(
@@ -474,19 +474,19 @@ _sym_db.RegisterMessage(Id)
 
 
 
-_LIBRARYSERVICE = _descriptor.ServiceDescriptor(
-  name='LibraryService',
-  full_name='library.LibraryService',
+_LIBRARY = _descriptor.ServiceDescriptor(
+  name='Library',
+  full_name='library.Library',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=651,
-  serialized_end=923,
+  serialized_end=916,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddBook',
-    full_name='library.LibraryService.AddBook',
+    full_name='library.Library.AddBook',
     index=0,
     containing_service=None,
     input_type=_BOOKREQUEST,
@@ -496,7 +496,7 @@ _LIBRARYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='EditBook',
-    full_name='library.LibraryService.EditBook',
+    full_name='library.Library.EditBook',
     index=1,
     containing_service=None,
     input_type=_EDITBOOKREQUEST,
@@ -506,7 +506,7 @@ _LIBRARYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteBook',
-    full_name='library.LibraryService.DeleteBook',
+    full_name='library.Library.DeleteBook',
     index=2,
     containing_service=None,
     input_type=_ID,
@@ -516,7 +516,7 @@ _LIBRARYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetBookById',
-    full_name='library.LibraryService.GetBookById',
+    full_name='library.Library.GetBookById',
     index=3,
     containing_service=None,
     input_type=_ID,
@@ -526,7 +526,7 @@ _LIBRARYSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetBooks',
-    full_name='library.LibraryService.GetBooks',
+    full_name='library.Library.GetBooks',
     index=4,
     containing_service=None,
     input_type=_VOID,
@@ -535,8 +535,8 @@ _LIBRARYSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_LIBRARYSERVICE)
+_sym_db.RegisterServiceDescriptor(_LIBRARY)
 
-DESCRIPTOR.services_by_name['LibraryService'] = _LIBRARYSERVICE
+DESCRIPTOR.services_by_name['Library'] = _LIBRARY
 
 # @@protoc_insertion_point(module_scope)

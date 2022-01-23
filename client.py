@@ -1,26 +1,41 @@
 import logging
 import grpc
 
-from generated import library_pb2, library_pb2_grpc
+from generated import library_pb2 as lib_object, library_pb2_grpc as lib_service
 
 def library_add_book(stub):
-    book = stub.AddBook(library_pb2.BookRequest(
-                                            title = "Las Peripecias del Tonto Enojado", 
-                                            genre = "thriller",
-                                            pages = 315,
-                                            author = "Autor prueba",
-                                            year = 2006,
-                                            isbn = "978-987-25620-2-1"
-                                            ))
-    print(book) # guardar en DB
+    book = stub.AddBook(lib_object.BookRequest(
+        title="Las Peripecias del Tonto Enojado",
+        genre="thriller",
+        pages=315,
+        author="Autor prueba",
+        year=2006,
+        isbn="978-987-25620-2-1"
+    ))
+    print(book)  # guardar en DB
+
+
+def library_edit_book(stub):
+    book = stub.EditBook(lib_object.EditBookRequest(
+        id=1,
+        book=lib_object.BookRequest(
+            title="Las Aventuras del Tonto Enojado"
+        )
+    ))
+    print(book)
+
+
+def library_delete_book(stub):
+    stub.DeleteBook(lib_object.Id(id=1))
 
 
 def library_get_book_by_id(stub):
-    book = stub.GetBookById(library_pb2.Id(id = 1))
+    book = stub.GetBookById(lib_object.Id(id=1))
     print(book)
 
+
 def library_get_books(stub):
-    responses = stub.GetBooks(library_pb2.void()) # returns a stream
+    responses = stub.GetBooks(lib_object.void())  # returns a stream
     for res in responses:
         print(res)
 
@@ -36,13 +51,18 @@ def library_get_books(stub):
 
 def run():
     with grpc.insecure_channel('localhost:50051') as channel:
-        stub = library_pb2_grpc.LibraryServiceStub(channel)
+        stub = lib_service.LibraryStub(channel)
         print("------------- ADD BOOK & PRINT")
         library_add_book(stub)
-        print("------------- GET BOOK BY ID[1]")
-        library_get_book_by_id(stub)
+        print("------------- EDIT BOOK & PRINT")
+        library_edit_book(stub)
+        #print("------------- DELETE BOOK ID[1]")
+        # library_delete_book(stub)
+        #print("------------- GET BOOK BY ID[1]")
+        # library_get_book_by_id(stub)
         print("------------- YIELD ALL BOOKS")
         library_get_books(stub)
+
 
 if __name__ == '__main__':
     logging.basicConfig()

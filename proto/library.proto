@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package library;
 
-service LibraryService {
+service Library {
     rpc AddBook(BookRequest) returns (BookItem) {};
     rpc EditBook(EditBookRequest) returns (BookItem){};
     rpc DeleteBook(Id) returns (void){};
