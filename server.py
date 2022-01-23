@@ -28,18 +28,19 @@ class LibraryServiceServicer(library_pb2_grpc.LibraryServiceServicer):
 
         return book_to_add
     
+
+    def GetBookById(self, request, context):
+        print("Received 'GetBookById' request") #debug
+
+        for book in library_demo:
+            if book.id == request.id:
+                return book
+        return -1
+
     def GetBooks(self, request, context):
         print("Received 'GetBooks' request") #debug
         for book in library_demo:
-            yield library_pb2.BookItem(
-                id = book.id,
-                title = book.title,
-                genre = book.genre,
-                pages = book.pages,
-                author = book.author,
-                year = book.year,
-                isbn = book.isbn
-            )
+            yield book
 
 
 def serve():

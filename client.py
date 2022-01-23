@@ -15,6 +15,10 @@ def library_add_book(stub):
     print(book) # guardar en DB
 
 
+def library_get_book_by_id(stub):
+    book = stub.GetBookById(library_pb2.Id(id = 1))
+    print(book)
+
 def library_get_books(stub):
     responses = stub.GetBooks(library_pb2.void()) # returns a stream
     for res in responses:
@@ -33,7 +37,11 @@ def library_get_books(stub):
 def run():
     with grpc.insecure_channel('localhost:50051') as channel:
         stub = library_pb2_grpc.LibraryServiceStub(channel)
+        print("------------- ADD BOOK & PRINT")
         library_add_book(stub)
+        print("------------- GET BOOK BY ID[1]")
+        library_get_book_by_id(stub)
+        print("------------- YIELD ALL BOOKS")
         library_get_books(stub)
 
 if __name__ == '__main__':
