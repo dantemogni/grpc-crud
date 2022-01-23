@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package libraryPackage;
 
-service Book {
-    rpc CreateBook(BookRequest) returns (BookItem) {}
+service Library {
+    rpc AddBook(BookRequest) returns (BookItem) {}
     rpc ListBooks(void) returns (stream BookItems) {}
 }
 

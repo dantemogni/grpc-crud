@@ -2,11 +2,12 @@ from concurrent import futures
 import logging
 import grpc
 
-import book_pb2_grpc, book_pb2
+from generated import library_pb2, library_pb2_grpc
 
-class BookServicer(book_pb2_grpc.BookServicer):
-    def CreateBook(self, request, context):
-        return book_pb2.BookItem(name = request.name,
+
+class LibraryServicer(library_pb2_grpc.LibraryServicer):
+    def AddBook(self, request, context):
+        return library_pb2.BookItem(name = request.name,
                                  genre = request.genre,
                                  pages = request.pages,
                                  author = request.author,
@@ -19,8 +20,8 @@ class BookServicer(book_pb2_grpc.BookServicer):
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    book_pb2_grpc.add_BookServicer_to_server(
-        BookServicer(), server)
+    library_pb2_grpc.add_LibraryServicer_to_server(
+        LibraryServicer(), server)
     server.add_insecure_port('[::]:50051')
     server.start()
     server.wait_for_termination()
