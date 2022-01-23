@@ -1,31 +1,66 @@
 syntax = "proto3";
 
-package libraryPackage;
+package library;
 
-service Library {
-    rpc AddBook(BookRequest) returns (BookItem) {}
-    rpc ListBooks(void) returns (stream BookItems) {}
+service LibraryService {
+    rpc AddBook(BookRequest) returns (BookItem) {};
+    rpc EditBook(EditBookRequest) returns (BookItem){};
+    rpc DeleteBook(Id) returns (void){};
+    rpc GetBookById(Id) returns (BookItem) {};
+    rpc GetBooks(void) returns (stream BookItem) {};
 }
 
 message void{}
 
 message BookItem {
     int32 id = 1;
-    string name = 2;
-    string genre = 3;
+    string title = 2;
+    BookGenre genre = 3;
     int32 pages = 4;
     string author = 5;
-    string isbn = 6;
+    int32 year = 6;
+    string isbn = 7;
 }
 
 message BookRequest{
-    string name = 1;
+    string title = 1;
     string genre = 2;
     int32 pages = 3;
     string author = 4;
-    string isbn = 5;
+    int32 year = 5;
+    string isbn = 6;
+}
+
+message EditBookRequest{
+    int32 id = 1;
+    BookRequest book = 2;
 }
 
 message BookItems {
-    repeated BookItem bookItems = 1;
+    BookItem bookItems = 1;
+}
+
+enum BookGenre {
+    NONE = 0;
+    ADVENTURE = 1;
+    ACTION = 2;
+    CLASSICS = 3;
+    MYSTERY = 4;
+    ROMANCE = 5;
+    BIOGRAPHIC = 6;
+    HISTORY = 7;
+    ESSAYS = 8;
+    POETRY = 9;
+    SELF_HELP = 10;
+    COMEDY = 11;
+    DRAMA = 12;
+    HORROR = 13;
+    SCI_FI = 14;
+    THRILLER = 15;
+    WAR = 16;
+    WESTERN = 17;
+}
+
+message Id{
+    int32 id = 1;
 }
