@@ -1,5 +1,4 @@
 from concurrent import futures
-from email import message
 import logging
 import grpc
 from pymongo import MongoClient
