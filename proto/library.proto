@@ -13,7 +13,7 @@ service Library {
 message void{}
 
 message BookItem {
-    int32 id = 1;
+    string _id = 1;
     string title = 2;
     BookGenre genre = 3;
     int32 pages = 4;
@@ -32,7 +32,7 @@ message BookRequest{
 }
 
 message EditBookRequest{
-    int32 id = 1;
+    string id = 1;
     BookRequest book = 2;
 }
 
@@ -62,5 +62,5 @@ enum BookGenre {
 }
 
 message Id{
-    int32 id = 1;
+    string id = 1;
 }

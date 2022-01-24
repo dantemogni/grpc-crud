@@ -17,20 +17,25 @@ def library_add_book(stub):
 
 def library_edit_book(stub):
     book = stub.EditBook(lib_object.EditBookRequest(
-        id=1,
+        id="61eed54b885249342ac8228e",
         book=lib_object.BookRequest(
-            title="Las Aventuras del Tonto Enojado"
+            title="Las Aventuras del Tonto Enojado",
+            genre="drama",
+            pages=315,
+            author="Autor prueba",
+            year=2006,
+            isbn="978-987-25620-2-1"
         )
     ))
     print(book)
 
 
 def library_delete_book(stub):
-    stub.DeleteBook(lib_object.Id(id=1))
+    stub.DeleteBook(lib_object.Id(id="61eee7d4144497a3400d0175"))
 
 
 def library_get_book_by_id(stub):
-    book = stub.GetBookById(lib_object.Id(id=1))
+    book = stub.GetBookById(lib_object.Id(id="61eee6eb5d4f9c3d44fcea12"))
     print(book)
 
 
@@ -56,10 +61,10 @@ def run():
         library_add_book(stub)
         print("------------- EDIT BOOK & PRINT")
         library_edit_book(stub)
-        #print("------------- DELETE BOOK ID[1]")
-        # library_delete_book(stub)
-        #print("------------- GET BOOK BY ID[1]")
-        # library_get_book_by_id(stub)
+        print("------------- DELETE BOOK ID[1]")
+        library_delete_book(stub)
+        print("------------- GET BOOK BY ID[61eee6eb5d4f9c3d44fcea12]")
+        library_get_book_by_id(stub)
         print("------------- YIELD ALL BOOKS")
         library_get_books(stub)
 

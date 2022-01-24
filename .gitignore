@@ -1,3 +1,4 @@
 venv/
 __pycache__
 generate_proto.cmd
+mongo_data
