@@ -40,7 +40,7 @@ def demo_add_many(stub):
         title="The Handmaid's Tale",
         genre="drama",
         pages=311,
-        author="Margaret Atwoodutor prueba",
+        author="Margaret Atwood",
         year=1985,
         isbn="978-987-25620-2-1"
     ))
