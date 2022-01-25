@@ -38,7 +38,7 @@ class LibraryServicer(lib_service.LibraryServicer):
         book_to_add['genre'] = lib_object.BookGenre.Value(
             request.genre.upper())
 
-        # inserts to db & saves the generated id by mongo
+        # inserts to db
         self.db.books.insert_one(book_to_add)
 
         # returns gRPC object with the parsed data. Optional
